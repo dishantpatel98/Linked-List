@@ -1,0 +1,22 @@
+/*
+ * For your reference:
+ *
+ * DoublyLinkedListNode {                                //typedef is used to define the node of linked list.          
+ *     int data;
+ *     DoublyLinkedListNode* next;
+ *     DoublyLinkedListNode* prev;
+ * };
+ *
+ */
+DoublyLinkedListNode* reverse(DoublyLinkedListNode* head) {   //I am using two pointes to reverse complete linked list 'c'
+DoublyLinkedListNode*c=head;                                  // and 'p'.  
+DoublyLinkedListNode*p=NULL;
+while(c){
+c->prev=c->next;
+c->next=p;
+p=c;
+c=c->prev;
+}
+head=p;
+return head;
+}
